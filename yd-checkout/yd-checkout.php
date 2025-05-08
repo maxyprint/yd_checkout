@@ -145,3 +145,8 @@ function yd_checkout() {
     global $yd_checkout;
     return $yd_checkout;
 }
+
+/**
+ * Include test payment functionality.
+ */
+require_once plugin_dir_path(__FILE__) . 'includes/test.php';
