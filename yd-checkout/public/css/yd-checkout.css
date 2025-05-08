@@ -1,0 +1,710 @@
+/**
+ * YDesign Checkout - Main Stylesheet
+ * Consolidated styles for the checkout experience
+ */
+
+/* ---- General Layout ---- */
+.yd-checkout-container {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+}
+
+.yd-checkout-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.yd-checkout-main {
+    flex: 1;
+    min-width: 320px;
+}
+
+.yd-checkout-sidebar {
+    width: 340px;
+}
+
+@media (max-width: 768px) {
+    .yd-checkout-content {
+        flex-direction: column-reverse;
+    }
+
+    .yd-checkout-sidebar {
+        width: 100%;
+    }
+}
+
+/* ---- Header ---- */
+.yd-checkout-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* ---- Form Sections ---- */
+.yd-checkout-section {
+    margin-bottom: 40px;
+    border-radius: 4px;
+}
+
+.yd-checkout-section h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.yd-checkout-section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* ---- Address Section ---- */
+.yd-checkout-saved-addresses {
+    margin-bottom: 20px;
+}
+
+.yd-checkout-address-option {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.yd-checkout-address-option:hover {
+    border-color: #b0b0b0;
+}
+
+.yd-checkout-address-option.yd-address-selected {
+    border-color: #007bff;
+    box-shadow: 0 0 0 1px #007bff;
+}
+
+.yd-address-selector {
+    display: flex;
+    align-items: flex-start;
+}
+
+.yd-address-selector input[type="radio"] {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.yd-address-selector label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.yd-address-selector label strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.yd-checkout-new-address {
+    margin-bottom: 20px;
+}
+
+.yd-add-address-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.yd-add-address-btn:hover {
+    color: #0056b3;
+}
+
+/* ---- Form Controls ---- */
+.yd-checkout-form-row {
+    margin-bottom: 15px;
+}
+
+.yd-checkout-form-two-col {
+    display: flex;
+    gap: 15px;
+}
+
+.yd-checkout-form-field {
+    flex: 1;
+}
+
+.yd-checkout-full-width {
+    width: 100%;
+}
+
+.yd-checkout-form-field input[type="text"],
+.yd-checkout-form-field input[type="email"],
+.yd-checkout-form-field input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.yd-checkout-form-field input[type="text"]:focus,
+.yd-checkout-form-field input[type="email"]:focus,
+.yd-checkout-form-field input[type="tel"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.yd-checkout-form-field select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.yd-checkout-form-field select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.yd-checkout-form-field input.yd-field-error {
+    border-color: #dc3545;
+}
+
+.yd-checkout-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.yd-checkout-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.yd-checkout-checkbox label,
+.yd-checkout-checkbox span {
+    cursor: pointer;
+}
+
+.yd-checkout-billing-toggle {
+    margin-bottom: 20px;
+}
+
+.yd-hidden {
+    display: none;
+}
+
+/* ---- Payment Methods ---- */
+.yd-checkout-payment-methods-wrapper {
+    margin-bottom: 30px;
+}
+
+.yd-checkout-payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.yd-checkout-payment-method {
+    position: relative;
+    border: 1px solid #d1d1d1;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 120px;
+    height: 60px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.1s;
+    background: white;
+}
+
+.yd-checkout-payment-method.selected {
+    border: 2px solid #0079ff;
+}
+
+.yd-checkout-payment-descriptions {
+    margin-top: 20px;
+}
+
+
+.yd-checkout-payment-method:hover {
+    border-color: #b0b0b0;
+    transform: translateY(-2px);
+}
+
+.yd-checkout-payment-method input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.yd-checkout-payment-method input[type="radio"]:checked+.yd-payment-method-label {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px #007bff;
+}
+
+.yd-payment-method-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.yd-payment-method-icon {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.yd-checkout-payment-description {
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.yd-checkout-payment-method-fields {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+/* ---- Submit Button ---- */
+.yd-checkout-submit {
+    margin-top: 30px;
+}
+
+.yd-checkout-submit-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.yd-checkout-submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+    /* Standard Textfarbe, da im JSON nicht explizit gesetzt */
+    background-color: #0079FF;
+    border: 1px solid #E4E4E4;
+    border-radius: 15px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.yd-checkout-submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+    /* Standard Textfarbe, da im JSON nicht explizit gesetzt */
+    background-color: #0079FF;
+    border: 1px solid #E4E4E4;
+    border-radius: 15px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.yd-checkout-submit-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* ---- Order Summary ---- */
+.yd-order-summary {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.yd-order-summary h2 {
+    font-size: 2rem;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.yd-order-items {
+    background: white;
+    border-radius: 50px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.yd-order-item {
+    display: flex;
+    padding-bottom: 15px;
+    align-items: center;
+}
+
+.yd-order-item:last-child {
+    border-bottom: none;
+}
+
+.yd-order-item-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+.yd-order-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.yd-order-item-details {
+    flex: 1;
+}
+
+.yd-order-item-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.yd-order-item-price {
+    color: black;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-family: var(--wp--preset--font-family--heading);
+}
+
+.yd-order-item-total {
+    font-weight: 500;
+}
+
+.yd-order-totals {
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.yd-order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+span.yd-order-value {
+    font-weight: 600;
+}
+
+.yd-order-divider {
+    height: 1px;
+    background-color: #d1d1d1;
+    margin: 15px 0;
+}
+
+.yd-order-total {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* ---- Notices ---- */
+.yd-checkout-notices {
+    margin-bottom: 20px;
+}
+
+.yd-checkout-notice {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.yd-checkout-notice-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.yd-checkout-notice-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.yd-checkout-notice-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* ---- Address Search ---- */
+.yd-checkout-address-search {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.yd-address-autocomplete-results {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.yd-address-autocomplete-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.yd-address-autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.yd-address-autocomplete-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* ---- Login Required ---- */
+.yd-checkout-login-required {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.yd-checkout-login-required h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.yd-checkout-register-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ---- Payment Gateway Specific ---- */
+#stripe-payment-element {
+    margin-bottom: 20px;
+}
+
+#paypal-buttons {
+    margin-top: 15px;
+}
+
+.yd-payment-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.yd-payment-message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.yd-payment-message-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.yd-payment-message-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* ---- Address Grid Layout ---- */
+.yd-checkout-address-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .yd-checkout-address-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.yd-checkout-address-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #fff;
+}
+
+.yd-checkout-address-card:hover {
+    border-color: #b0b0b0;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.yd-checkout-address-card.yd-address-selected {
+    border-color: #007bff;
+    border-width: 2px;
+}
+
+.yd-address-card-content {
+    padding: 16px 24px;
+    position: relative;
+}
+
+.yd-address-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    padding-right: 24px;
+    color: #007bff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.yd-address-summary {
+    font-size: 20px;
+    color: #007bff;
+    margin: 0;
+    font-weight: 600;
+}
+
+.yd-address-radio {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    margin: 0;
+}
+
+/* Add New Address Card */
+.yd-address-add-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.yd-address-add-new:hover {
+    border-color: #999;
+    background-color: #f5f5f5;
+}
+
+.yd-address-add-new .yd-address-card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.yd-address-add-icon {
+    font-size: 24px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.yd-address-add-text {
+    color: #007bff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Form Title */
+.yd-checkout-form-title {
+    margin-bottom: 20px;
+}
+
+.yd-checkout-form-title h3 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Form Actions */
+.yd-checkout-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.yd-button {
+    padding: 10px 16px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.yd-button-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.yd-button-primary:hover {
+    background-color: #0069d9;
+}
+
+.yd-button-secondary {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.yd-button-secondary:hover {
+    background-color: #e9ecef;
+}
+
+/* Loading State */
+.yd-address-loading {
+    grid-column: 1 / -1;
+    padding: 16px;
+    text-align: center;
+    color: #666;
+}

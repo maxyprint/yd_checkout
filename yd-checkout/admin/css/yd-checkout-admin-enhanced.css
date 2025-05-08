@@ -1,0 +1,179 @@
+/**
+ * Enhanced Admin Styles for YDesign Checkout
+ *
+ * @package    Yd_Checkout
+ * @subpackage Yd_Checkout/admin/css
+ */
+
+/* Main Admin Container */
+.yd-checkout-admin-wrapper {
+    margin: 20px 0;
+}
+
+.yd-checkout-admin-wrapper h1 {
+    margin-bottom: 20px;
+}
+
+/* Tab Styling */
+.yd-checkout-admin-tabs .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.yd-checkout-admin-tabs .nav-tab {
+    font-size: 14px;
+}
+
+/* Form Styling */
+.yd-checkout-admin-form {
+    max-width: 900px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.yd-checkout-admin-form .form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+}
+
+.yd-checkout-admin-form .form-table td {
+    padding: 15px 10px;
+}
+
+/* Section Styling */
+.yd-checkout-section-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1.5em 0 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #eee;
+}
+
+/* API Credential Fields */
+.yd-checkout-api-credentials {
+    padding: 15px;
+    margin: 15px 0;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-left: 4px solid #00a0d2;
+}
+
+/* Payment Method Sub-tabs */
+.yd-checkout-admin-payment-tabs .subsubsub {
+    float: none;
+    margin-bottom: 20px;
+}
+
+.yd-checkout-admin-payment-tabs .subsubsub a {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.yd-checkout-admin-payment-tabs .subsubsub a.current {
+    background: #f6f6f6;
+    border-color: #999;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Toggle Switch Styling */
+.yd-checkout-toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.yd-checkout-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.yd-checkout-toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.yd-checkout-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.yd-checkout-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.yd-checkout-toggle-checkbox:checked + .yd-checkout-toggle-slider {
+    background-color: #2196F3;
+}
+
+.yd-checkout-toggle-checkbox:checked + .yd-checkout-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.yd-checkout-toggle-label span {
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.yd-checkout-toggle-label span.active {
+    font-weight: bold;
+    opacity: 1;
+}
+
+/* Validation Message Styling */
+.yd-checkout-validation-message {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.yd-checkout-validation-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.yd-checkout-validation-error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/* Environment Specific Fields */
+.yd-checkout-test-field,
+.yd-checkout-live-field {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 782px) {
+    .yd-checkout-admin-form .form-table th {
+        width: 100%;
+        padding: 10px 0 0;
+    }
+    
+    .yd-checkout-admin-form .form-table td {
+        padding: 10px 0;
+    }
+}

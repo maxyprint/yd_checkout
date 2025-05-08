@@ -1,0 +1,93 @@
+/* PayPal Settings Styles */
+.yd-checkout-toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.yd-checkout-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.yd-checkout-toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.yd-checkout-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.yd-checkout-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.yd-checkout-toggle-checkbox:checked + .yd-checkout-toggle-slider {
+    background-color: #2196F3;
+}
+
+.yd-checkout-toggle-checkbox:checked + .yd-checkout-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.yd-checkout-toggle-label {
+    display: flex;
+    align-items: center;
+}
+
+.yd-checkout-toggle-on,
+.yd-checkout-toggle-off {
+    font-weight: normal;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.yd-checkout-toggle-on.active,
+.yd-checkout-toggle-off.active {
+    font-weight: bold;
+    opacity: 1;
+}
+
+/* Validation message styles */
+.paypal-validation-message {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.paypal-validation-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.paypal-validation-error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/* Field visibility control */
+.paypal-sandbox-field,
+.paypal-live-field {
+    display: none;
+}
